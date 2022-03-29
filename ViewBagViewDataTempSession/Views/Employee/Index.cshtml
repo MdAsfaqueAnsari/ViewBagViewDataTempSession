@@ -1,0 +1,59 @@
+﻿@model ViewBagViewDataTempSession.Models.EmpModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>@Model.Name</h2>
+
+@Html.TextBoxFor(m => m.Name)
+
+<h3>@Model.Email</h3>
+
+<input name="Mobile" type="text" />
+
+@Html.TextBoxFor(m=>m.Mobile)
+
+<h1>===============ViewBag========================</h1>
+<h1>@ViewBag.demo</h1>
+
+<h1>@ViewBag.demo1</h1>
+
+<h1>@ViewBag.date</h1>
+
+<h1>@ViewBag.flo</h1>
+
+<h1>@ViewBag.don</h1>
+
+
+<h1>=================ViewData=======================</h1>
+<h2>@ViewData["Test1"]</h2>
+<h2>@ViewData["Test2"]</h2>
+<h2>@ViewData["Test3"]</h2>
+<h2>@ViewData["Test4"]</h2>
+<h2>@ViewData["Test5"]</h2>
+
+<h1>===============TempData=========================</h1>
+<h3>@TempData["Tem1"]</h3>
+<h3>@TempData["Tem2"]</h3>
+<h3>@TempData["Tem3"]</h3>
+<h3>@TempData["Tem4"]</h3>
+<h3>@TempData["Tem5"]</h3>
+
+
+
+@{
+
+    
+    TempData.Keep("Temp2");
+    TempData.Keep("Temp3");
+    TempData.Keep("Temp4");
+}
+
+@{ 
+    string str = TempData.Peek("Tem1").ToString();
+
+}
+<h1>@str</h1>
+<h1>====================================================</h1>
+<h1>@Session["Name"]</h1>
